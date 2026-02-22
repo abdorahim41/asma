@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>عالم الحب السحري ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    
+    <link rel="stylesheet" href="hearts-style.css">
+</head>
+<body>
+    <!-- زر العودة -->
+    <a href="../inde.html" class="back-home">🏠 عودة</a>
+
+    <div id="game-container" class="sunset-gradient">
+        <div class="ui-layer">
+            <div class="score-container glass-panel"> ❤️ مجموع الحب: <span id="score-value">0</span> </div>
+            <div class="glass-panel">
+                <h2 id="daily-message">أمسكي القلوب يا أميرتي ✨</h2>
+            </div>
+        </div>
+
+        <div id="game-area">
+            <div id="player-avatar" class="avatar-container">
+                <img src="unnamed.png" alt="الشخصية" id="avatar-img">
+            </div>
+        </div>
+
+        <div class="waves-container">
+            <svg class="waves" viewBox="0 24 150 28" preserveAspectRatio="none">
+                <defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" /></defs>
+                <g class="parallax">
+                    <use href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.3)" />
+                    <use href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                    <use href="#gentle-wave" x="48" y="7" fill="#ffffff" />
+                </g>
+            </svg>
+        </div>
+    </div>
+
+    <div id="milestone-overlay" class="overlay hidden">
+        <div class="glass-panel">
+            <h1 id="milestone-text"></h1>
+            <button class="btn-close" id="close-milestone">أحبك كثيراً ❤️</button>
+        </div>
+    </div>
+
+    <!-- أصوات الخلفية وجمع القلوب -->
+    <audio id="bg-audio" loop>
+        <source src="../sounds/background-sound.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="collect-audio">
+        <source src="../sounds/love-sound.wav" type="audio/wav">
+    </audio>
+
+    <script src="hearts-script.js"></script>
+</body>
+</html>

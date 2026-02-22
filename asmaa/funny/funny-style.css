@@ -1,0 +1,53 @@
+:root { --danger: #ef4444; --gray: #4b5563; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body, html { width: 100%; height: 100%; overflow: hidden; font-family: 'Cairo', sans-serif; }
+
+.stormy-gradient {
+    position: relative; width: 100%; height: 100%;
+    background: linear-gradient(180deg, #1f2937 0%, #374151 100%);
+}
+
+#fog-overlay {
+    position: fixed; inset: 0; background: white; opacity: 0;
+    pointer-events: none; z-index: 200; transition: opacity 0.4s;
+}
+
+.ui-layer {
+    position: absolute; top: 20px; width: 100%; padding: 0 40px;
+    display: flex; justify-content: space-between; z-index: 100;
+}
+
+.avatar-container {
+    position: absolute; bottom: 100px; left: 50%; transform: translateX(-50%);
+    width: 120px; height: 120px; z-index: 50; will-change: left;
+}
+
+#avatar-img { width: 100%; height: 100%; object-fit: contain; }
+
+/* تصميم الصخرة بـ CSS لضمان ظهورها */
+.stone {
+    position: absolute; width: 35px; height: 30px;
+    background: #555; border-radius: 40% 60% 50% 50% / 60% 40% 60% 40%;
+    box-shadow: inset -5px -5px 10px #222; z-index: 40;
+}
+
+.bomb { position: absolute; font-size: 40px; z-index: 45; animation: shake 0.2s infinite; cursor: default; }
+
+@keyframes shake { 0% { transform: rotate(0deg); } 50% { transform: rotate(10deg); } 100% { transform: rotate(0deg); } }
+
+.floating-msg {
+    position: absolute; color: white; background: rgba(0, 0, 0, 0.7);
+    padding: 8px 18px; border-radius: 20px; animation: fadeUp 1.5s forwards; z-index: 60;
+}
+
+@keyframes fadeUp { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(-80px); } }
+
+.overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.9); display: flex; justify-content: center; align-items: center; z-index: 1000; }
+.btn-close { margin-top: 20px; padding: 10px 25px; background: var(--gray); color: white; border: none; border-radius: 12px; cursor: pointer; font-family: 'Cairo'; }
+.hidden { display: none; }
+
+.explosion {
+    position: absolute; width: 150px; height: 150px; background: radial-gradient(circle, #ff4500, transparent);
+    border-radius: 50%; transform: translate(-50%, -50%); animation: explode 0.5s forwards; z-index: 300;
+}
+@keyframes explode { 0% { transform: scale(0); opacity: 1; } 100% { transform: scale(3); opacity: 0; } }

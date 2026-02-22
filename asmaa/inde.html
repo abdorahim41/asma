@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اسومتي ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylee.css">
+</head>
+<body>
+
+    <!-- زر الصوت أعلى يسار الشاشة -->
+    <button id="mute-btn" onclick="toggleMute()">🔇</button>
+
+    <div class="main-content">
+        <h1 class="eng-title">How is your heart today?</h1>
+        <h2 class="arb-title">كيف حال قلبكِ الآن؟</h2>
+        
+        <div class="mood-card">
+            <h3 id="moodText">عادية</h3>
+            <p class="sub-text"></p>
+            
+            <div class="slider-wrapper">
+                <input type="range" min="0" max="100" value="50" class="mood-slider" id="moodSlider">
+                <div class="slider-labels">
+                    <span>0%</span>
+                    <span>50%</span>
+                    <span>100%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="button-row">
+            <a href="daily/daily.html" class="action-btn">💌 رسالة اليومية</a>
+            <a href="mario/mario.html" class="action-btn">🎮 اوصليني لقلبك</a>
+        </div>
+
+        <!-- زر القبلة -->
+        <button class="big-kiss-btn" onclick="triggerKiss()">💋</button>
+
+        <!-- رسالة عيد الحب -->
+        <div id="valentines-message" style="display:none;
+            margin-top: 10px; background: rgba(248, 49, 128, 0.947); color: white;
+            padding: 10px 29px; border-radius: 30px; font-size: 18px;
+            text-align: center; font-family: 'Cairo', sans-serif; opacity:0;
+            transition: opacity 1.5s; max-width: 90%; margin-left:auto; margin-right:auto;">
+            ❤️ رسالة خاصة بعيد الحب غدا لن تكون ❤️<br>
+           🌹 أنتِ سبب سعادتي، وضحكتي، وكل لحظة حلوة في حياتي 🌹<br>
+           ♥️ عيد حب سعيد، وكل سنة ونحن معاً ♥️
+        </div>
+    </div>
+
+    <div class="avatars-footer">
+        <div class="avatar-clickable-area" onclick="saySomething('me')">
+            <div id="my-bubble" class="chat-bubble"></div>
+            <img src="nnamed1.png" class="avatar-img my-img" alt="My Photo">
+        </div>
+        
+        <div class="avatar-clickable-area" onclick="saySomething('her')">
+            <div id="her-bubble" class="chat-bubble"></div>
+            <img src="nnamed.png" class="avatar-img her-img" alt="Her Photo">
+        </div>
+    </div>
+
+    <script src="scriptt.js"></script>
+</body>
+</html>

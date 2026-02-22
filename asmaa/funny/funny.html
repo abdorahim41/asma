@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>رحلة الاعتذار 😔</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    
+    <link rel="stylesheet" href="funny-style.css">
+    
+    <style>
+        /* إضافة ستايل بسيط لزر الرجوع ليظهر بشكل جميل */
+        .back-home {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            padding: 10px 20px;
+            border-radius: 15px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        /* تعديل فئة glass-panel */
+        .glass-panel {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            border: 0px solid rgba(255, 255, 255, 0.1);
+            padding: 12px 25px;
+            border-radius: 20px;
+            color: white;
+            text-align: center;
+            position: absolute; /* لتحديد الموقع لكل لوحة */
+        }
+
+        /* لوحة في الطرف (يمين أو يمكن تعديلها لليسار) */
+        .glass-panel.side {
+            top: 20px;
+            right: 40px;
+        }
+
+        /* لوحة في الوسط */
+        .glass-panel.center {
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+    <a href="../inde.html" class="back-home">🏠 الرئيسية</a>
+
+    <div id="fog-overlay"></div>
+
+    <div id="game-container" class="stormy-gradient">
+        <div class="ui-layer">
+            <div id="status-container" class="glass-panel center">
+                <h2 id="daily-message">سامحيني.. لم أكن أقصد 💔</h2>
+            </div>
+            <div class="score-container glass-panel side">
+                 🪨 عدد الحجارة: <span id="score-value">0</span>
+            </div>
+        </div>
+
+        <div id="game-area">
+            <div id="player-avatar" class="avatar-container">
+                <img src="nnamed1.png" alt="Avatar" id="avatar-img">
+            </div>
+        </div>
+    </div>
+
+    <div id="milestone-overlay" class="overlay hidden">
+        <div class="glass-panel">
+            <h1 id="milestone-text"></h1>
+            <button class="btn-close" id="close-milestone">أعتذر من كل قلبي 😔</button>
+        </div>
+    </div>
+
+    <script src="funny-script.js"></script>
+</body>
+</html>

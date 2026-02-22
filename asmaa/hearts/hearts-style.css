@@ -1,0 +1,112 @@
+:root {
+    --primary: #ec4899;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body, html {
+    width: 100%; height: 100%; overflow: hidden;
+    font-family: 'Cairo', sans-serif;
+}
+
+.sunset-gradient {
+    position: relative; width: 100%; height: 100%;
+    background: linear-gradient(180deg, #351c75 0%, #741b47 40%, #c2384f 70%, #ff9a9e 100%);
+}
+
+/* واجهة المستخدم العليا */
+.ui-layer {
+    position: absolute; top: 20px; width: 100%;
+    padding: 0 30px;
+    display: flex; justify-content: space-between;
+    align-items: flex-start;
+    z-index: 100;
+}
+
+.glass-panel {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 12px 20px; border-radius: 20px; color: white;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+
+#game-area { position: relative; width: 100%; height: 100%; }
+
+.avatar-container {
+    position: absolute; bottom: 120px; left: 50%;
+    transform: translateX(-50%);
+    width: 100px; height: 100px;
+    z-index: 50;
+    will-change: left;
+    pointer-events: none;
+}
+
+#avatar-img { width: 100%; height: 100%; object-fit: contain; }
+
+.heart-drop {
+    position: absolute; font-size: 35px;
+    user-select: none; z-index: 40;
+}
+
+.floating-msg {
+    position: absolute; color: white; background: rgba(236, 72, 153, 0.9);
+    padding: 8px 18px; border-radius: 20px; pointer-events: none;
+    animation: fadeUp 2s forwards; z-index: 60; white-space: nowrap;
+}
+
+@keyframes fadeUp {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-100px); }
+}
+
+.waves-container {
+    position: absolute; bottom: 0; width: 100%; height: 12vh; z-index: 20;
+}
+
+.waves { width: 100%; height: 100%; }
+.parallax > use { animation: move-forever 25s infinite linear; }
+@keyframes move-forever { 0% { transform: translate3d(-90px,0,0); } 100% { transform: translate3d(85px,0,0); } }
+
+.overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.8);
+    display: flex; justify-content: center; align-items: center; z-index: 1000;
+}
+
+.btn-close {
+    margin-top: 20px; padding: 10px 25px; background: var(--primary);
+    color: white; border: none; border-radius: 12px; cursor: pointer; font-weight: bold;
+}
+
+.hidden { display: none; }
+
+/* زر العودة */
+.back-home {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(5px);
+    padding: 8px 15px;
+    border-radius: 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* جملة اللعبة في منتصف الشاشة */
+#daily-message {
+    position: absolute;
+    top: 20px;
+    left: 100%;
+    transform: translateX(130%);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 500;
+    pointer-events: none;
+}
